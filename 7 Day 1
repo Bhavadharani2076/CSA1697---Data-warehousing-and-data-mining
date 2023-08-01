@@ -1,0 +1,8 @@
+box_name<-c("Box1","Box2","Box3","Box4","Box5","Box6","Box7","Box8","Box9","Box10")
+no_of_pencils<-c(9,25,23,12,11,6,7,8,9,10)
+df<-data.frame(box_name,no_of_pencils)
+df
+mean(no_of_pencils)
+median(no_of_pencils)
+mode=names(table(no_of_pencils))[table(no_of_pencils)==max(table(no_of_pencils))]
+print(mode)

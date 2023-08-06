@@ -1,0 +1,16 @@
+marks<-c(55,60,71,63,55,65,50,55,58,59,61,63,65,67,71,72,75)
+num_bin<-3
+bin_size<-length(marks) %/% num_bin
+sorted_mark<-sort(marks)
+equal_freq_bin<-cut(sorted_mark,breaks=num_bin)
+equal_freq_bin<-factor(equal_freq_bin)
+equal_freq_bin<-data.frame(Marks=sorted_mark, Bins=equal_freq_bin)
+
+data_range<-max(marks)-min(marks)
+equal_width_bin<-cut(marks, breaks=seq(min(marks), max(marks)+data_range/num_bin, data_range/num_bin))
+equal_width_bin<-factor(equal_width_bin)
+equal_width_bin<-data.frame(Marks=marks, Bins=equal_width_bin)
+library(ggplot2)
+ggplot()+ geom_histogram(data=equal_freq_bin,aes(x=Marks))+geom_histogram(data=equal_width_bin, aes(x=Marks))
+
+

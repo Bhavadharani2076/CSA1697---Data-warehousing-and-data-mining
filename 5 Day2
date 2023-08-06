@@ -1,0 +1,2 @@
+head(AirPassengers)
+hist(AirPassengers,col="pink",breaks=c(100,seq(200,700,150)))

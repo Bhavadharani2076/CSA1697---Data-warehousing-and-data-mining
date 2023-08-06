@@ -1,0 +1,5 @@
+head(mtcars)
+p=mtcars$mpg
+plot(p,type="o", col="red")
+q=mtcars$qsec
+lines(q,type="o", col="blue")
